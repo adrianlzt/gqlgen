@@ -113,7 +113,6 @@ func (c *wsConnection) init() bool {
 		}
 
 		c.write(&operationMessage{Type: connectionAckMsg})
-		c.write(&operationMessage{Type: connectionKeepAliveMsg})
 	case connectionTerminateMsg:
 		c.close(websocket.CloseNormalClosure, "terminated")
 		return false
